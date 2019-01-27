@@ -16,5 +16,5 @@ make install
 
 ## Demo
 ```
-lua -v demo/gensquare.lua
+lua -v demo.lua
 ```
