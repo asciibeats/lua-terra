@@ -1,10 +1,14 @@
 local terra = require('terra')
-local map = terra.gensquare(7, 40, 6)
+
+local map = terra.new()
+local size = map:size()
+local tiles = map:generate()
+
 local terrains = {'  ', '..', '~~', '++', 'xx', '##'}
 
-for y = 0, map.size - 1 do
-	for x = 0, map.size - 1 do
-		io.write(terrains[map.tiles[y * map.size + x + 1] + 1])
+for y = 0, size - 1 do
+	for x = 0, size - 1 do
+		io.write(terrains[tiles[y * size + x + 1]])
 	end
 	io.write('\n')
 end
